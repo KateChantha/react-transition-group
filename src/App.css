@@ -53,15 +53,20 @@ section {
   opacity: 0;
   z-index: 1;
 }
+/* animate new Card 
+to wait/delay for 4s and then 
+fading in in duration of 5s*/
 .fade-enter.fade-enter-active {
     opacity: 1;
-    transition: opacity 5000ms linear 5000ms;
+    transition: opacity 5000ms linear 4000ms;
 }
 
 /* exit */
 .fade-exit {
     opacity: 1;
 }
+/* animate old Card fading out 
+in duration of 5s*/
 .fade-exit.fade-exit-active {
     opacity: 0;
     transition: opacity 5000ms linear;

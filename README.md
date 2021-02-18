@@ -8,8 +8,8 @@ Learn how to use React Transition Group library to animate state changes in your
 - in App.js, wrap Home component with CSSTransition that bring from react-transition-group. Attribute classNames with 's'
 ``` 
 <CSSTransition classNames="fade">
-          <Home property={property} />
-        </CSSTransition>
+  <Home property={property} />
+</CSSTransition>
  ```
 - display ONLY card one at a time by replacing a new card with the update index. 
 - in App.css, we have property for a new card fading in and an old card fading out. see '.fade'
@@ -17,11 +17,14 @@ Learn how to use React Transition Group library to animate state changes in your
 ```
 <TransitionGroup className="card-container">
     <CSSTransition
-        key={property._id}
-        timeout={4500}
-        classNames="slide"
+      key={property._id} 
+      timeout={4500} 
     >
         <Card property={property} />
     </CSSTransition>
 </TransitionGroup>
 ```
+- in Home.js, to have fade in - out between old and new transition with or without crossface transtion can be controlled by timeout={4500} at CSSTranstion. 
+- to without cross-face transtion timeout = {time fading in + time fading out}
+- to have cross-face transtion timeout will be less than {time fading in + time fading out}
+- in App.css, we have '.slide' to animate Card with scale down and up on transtion in or out.

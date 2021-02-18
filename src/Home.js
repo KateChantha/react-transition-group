@@ -10,7 +10,10 @@ const Home = ({property}) => {
                <TransitionGroup className="card-container">
                 <CSSTransition
                     key={property._id}
+                    // calculation timeout to have crossface transition
                     timeout={4500}
+                    // animate option either 'fade' or 'slide'
+                    // classNames="fade"
                     classNames="slide"
                 >
                     <Card property={property} />
