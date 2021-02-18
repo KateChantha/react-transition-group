@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { CSSTransition } from 'react-transition-group';
 import './App.css';
 import Home from './Home';
 import data from './data/data'
@@ -42,7 +43,14 @@ class App extends Component {
         <button onClick={() => this.nextProperty()} disabled={property.index === data.properties.length-1}>Next</button>
         <button onClick={() => this.prevProperty()} disabled={property.index === 0}>Prev</button>
 
-        <Home property={property} />
+        <CSSTransition
+          in={appearHome}
+          appear={true}
+          timeout={1000}
+          classNames="fade"
+        >
+          <Home property={property} />
+        </CSSTransition>
       </div>
     );
   }

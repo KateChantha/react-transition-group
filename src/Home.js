@@ -1,15 +1,21 @@
 import React from 'react';
-import logo from './assets/logo.svg';
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 import Card from './Card';
 
 const Home = ({property}) => {
 
     return(
-        <div className="home">
+        <div className="page">
                
-            <div className="card-container">
-                <Card property={property} />
-            </div>
+               <TransitionGroup className="card-container">
+                <CSSTransition
+                    key={property._id}
+                    timeout={4500}
+                    classNames="slide"
+                >
+                    <Card property={property} />
+                </CSSTransition>
+            </TransitionGroup>
 
         </div>   
     )
